@@ -1,5 +1,23 @@
-.FoodList {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
+.FoodList__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.FoodList__search input {
+  width: 60vw;
+  height: 25px;
+  outline: none;
+  border: none;
+  margin: 0 5px 5px 0px;
+  border-bottom: 1px solid #cccccc;
+  font-size: 20px;
+}
+
+.FoodList__noResult {
+  display: grid;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  color: red;
 }
