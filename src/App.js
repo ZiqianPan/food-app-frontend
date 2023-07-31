@@ -1,23 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import FoodList from "./components/FoodList/FoodList";
+import Loading from "./components/Loading/Loading";
+import Error from "./components/Error/Error";
+import Container from "./components/Container/Container";
+
+// TODO: Get this value from .env
+const API_URL = "http://localhost:8888";
 
 function App() {
+  const [foodData, setFoodData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        setError("");
+        setLoading(true);
+        const response = await fetch(`${API_URL}/items`);
+        const json = await response.json();
+        const { data, error } = json;
+        if (response.ok) {
+          setFoodData(data);
+          setLoading(false);
+        } else {
+          setError(error);
+          setLoading(false);
+        }
+      } catch (err) {
+        console.log(`<App /> useEffect error : ${err.message}`);
+        setLoading(false);
+        setError(err.message);
+      }
+    }
+    fetchData();
+  }, []);
+
+  const renderContent = () => {
+    if (loading) {
+      return <Loading />;
+    } else if (error) {
+      return <Error error={error} />;
+    } else {
+      return <FoodList foodData={foodData} />;
+    }
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="App__title">Our Menu</h1>
+      <Container center={Boolean(error || loading)}>
+        {renderContent()}
+      </Container>
     </div>
   );
 }

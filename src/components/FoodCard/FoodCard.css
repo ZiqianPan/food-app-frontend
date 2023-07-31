@@ -1,0 +1,15 @@
+.FoodCard {
+  border: solid 1px;
+  background-color: #eeeeee;
+  padding-left: 20px;
+  padding-bottom: 25px;
+}
+
+.FoodCard h1 {
+  margin-bottom: 0px;
+}
+
+.FoodCard img {
+  width: 100px;
+  height: 100px;
+}
