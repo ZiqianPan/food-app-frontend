@@ -15,12 +15,12 @@ export default function FoodCard({ food }) {
       Price: ${price.toFixed(2)}
       <br />
       Toppings:{" "}
-      {toppings.map((topping, index) => (
+      {toppings.length !== 0 ? toppings.map((topping, index) => (
         <span key={index}>
           {/* adds comma before the toppings if its NOT zero */}
           {`${(index ? ", " : "") + topping}`}
         </span>
-      ))}
+      )) : <span>No toppings</span>}
     </div>
   );
 }
