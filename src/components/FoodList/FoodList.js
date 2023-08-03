@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FoodCard from "../FoodCard/FoodCard";
 import "./FoodList.css";
+import GridLayout from "../GridLayout/GridLayout";
 
 export default function FoodList({ foodData }) {
   const [searchInput, setSearchInput] = useState("");
@@ -20,14 +21,16 @@ export default function FoodList({ foodData }) {
 
   const renderContent = () => {
     if (dataToDisplay.length === 0) {
-      return <div className="FoodList__noResult">No results for:{searchInput}</div>;
+      return (
+        <div className="FoodList__noResult">No results for:{searchInput}</div>
+      );
     } else {
       return (
-        <div className="FoodList__content">
+        <GridLayout grid3={true}>
           {dataToDisplay.map((food) => (
             <FoodCard key={food.id} food={food} />
           ))}
-        </div>
+        </GridLayout>
       );
     }
   };
@@ -42,6 +45,7 @@ export default function FoodList({ foodData }) {
           onChange={handleChange}
         />
       </div>
+
       {renderContent()}
     </div>
   );

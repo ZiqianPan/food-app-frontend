@@ -1,8 +1,6 @@
 .App {
   display: grid;
-  /* horiz center */
   justify-content: center;
-  /* vertical center */
   align-items: center;
   height: 100vh;
   background-color: #FFFFFF;

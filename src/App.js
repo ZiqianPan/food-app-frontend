@@ -5,7 +5,6 @@ import Loading from "./components/Loading/Loading";
 import Error from "./components/Error/Error";
 import Container from "./components/Container/Container";
 
-// TODO: Get this value from .env
 const API_URL = "http://localhost:8888";
 
 function App() {

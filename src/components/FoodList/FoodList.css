@@ -1,11 +1,7 @@
-.FoodList__content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
+
 
 .FoodList__search input {
-  width: 60vw;
+  width: 59vw;
   height: 25px;
   outline: none;
   border: none;
