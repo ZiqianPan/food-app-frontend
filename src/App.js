@@ -5,7 +5,7 @@ import Loading from "./components/Loading/Loading";
 import Error from "./components/Error/Error";
 import Container from "./components/Container/Container";
 
-const API_URL = "http://localhost:8880";
+const API_URL = "http://localhost:8888";
 
 function App() {
   const [foodData, setFoodData] = useState([]);
