@@ -1,15 +1,31 @@
 .FoodCard {
   border: solid 1px;
   background-color: #eeeeee;
-  padding-left: 20px;
-  padding-bottom: 25px;
+  display: grid;
+  justify-content: center;
+  align-items:center;
 }
 
 .FoodCard h1 {
   margin-bottom: 0px;
+  text-align: center;
+}
+
+.FoodCar__shortDescriptions {
+  text-align: center;
 }
 
 .FoodCard img {
-  width: 100px;
-  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.FoodCard__price {
+  text-align: center;
+}
+
+.FoodCard__toppings {
+  text-align: center;
 }
