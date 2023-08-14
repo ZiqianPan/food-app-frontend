@@ -26,7 +26,7 @@ export default function FoodList({ foodData }) {
       );
     } else {
       return (
-        <GridLayout grid3={true}>
+        <GridLayout>
           {dataToDisplay.map((food) => (
             <FoodCard key={food.id} food={food} />
           ))}
